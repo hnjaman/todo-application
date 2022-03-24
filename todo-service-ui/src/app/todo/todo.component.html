@@ -1,0 +1,91 @@
+<section class="table_con">
+    <button type="button" class="btn btn-dark">Todo ({{totalTodos}})</button>
+    <button type="button" (click)="openModal(todoModal)" class="btn btn-outline-primary" style="margin-left: 50px;">Add a task</button>
+    <section class="todosSectionbefore">
+        <section class="todosSection">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="todos != null">
+                    <tr *ngFor="let todo of todos;let i= index;">
+                        <td>{{todo.itemName}}</td>
+                        <td><p>{{todo.description}}</p></td>
+                        <td style="width: 300px;">
+                            <button type="button" (click)="openEditModal(todoModal, todo)" class="btn btn-outline-primary">Edit</button>
+                            <button type="button" (click)="markTodoAsDone(todo)" class="btn btn-outline-warning btnLeftMargin">Mark Done</button>
+                            <button type="button" (click)="deleteTodoItem(todo)" class="btn btn-outline-danger btnLeftMargin">Delete</button>
+                        </td>
+                    </tr>
+                    <tr *ngIf="todos.length == 0">
+                        <td colspan="11" style="font-weight: bold;color: brown;">No todo item found...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+</section>
+
+<section class="table_con">
+    <button type="button" class="btn btn-info">Completed ({{totalCompletedTodos}})</button>
+    <section class="todosSectionbefore">
+        <section class="todosSection">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Completed At</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="todos != null">
+                    <tr *ngFor="let completedTodo of completedTodos;let i= index;">
+                        <td>{{completedTodo.itemName}}</td>
+                        <td><p>{{completedTodo.description}}</p></td>
+                        <td style="width: 300px;">{{completedTodo.modifiedAt}}</td>
+                    </tr>
+                    <tr *ngIf="completedTodos.length == 0">
+                        <td colspan="11" style="font-weight: bold;color: brown;">Nothing is completed yet...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+</section>
+
+<ng-template #todoModal let-modal>
+    <a class="close" (click)="close()" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </a>
+    <div class="addTodo-body">
+        <div *ngIf="mode !== 'edit'" class="addTodo-header">Add todo item</div>
+        <div *ngIf="mode == 'edit'" class="editTodo-header">Edit todo item</div>
+        <form [formGroup]="todoForm">
+            <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="">Task Name <sup class="text-danger">*</sup></label>
+                    <input class="form-control" type="text" formControlName="itemName" placeholder="Task name to do" />
+                  </div>
+                </div>
+          
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="">Description <sup class="text-danger">*</sup></label>
+                    <textarea class="form-control" formControlName="description" placeholder="Write todo description"></textarea>
+                  </div>
+                </div>
+              </div>
+
+            <div class="d-flex justify-content">
+                <button type="button" *ngIf="mode !== 'edit'" (click)="addTodoItem(todoForm.value)" [disabled]="todoForm.invalid" class="btn btn-outline-info">Add</button>
+                <button type="button" *ngIf="mode == 'edit'" (click)="updateTodoItem(todoForm)" [disabled]="todoForm.invalid" class="btn btn-outline-info">Update</button>
+                <button type="button" (click)="resetForm()" class="btn btn-outline-secondary" style="margin-left: 10px;">Reset</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

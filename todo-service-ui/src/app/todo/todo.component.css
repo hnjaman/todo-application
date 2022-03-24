@@ -1,0 +1,126 @@
+.table_con {
+    padding: 10px 0px;
+    margin-left: 110px;
+    margin-right: 110px;
+}
+
+p {
+    margin-bottom: -27px;
+    font-size: 15px;
+    color: #003250;
+}
+
+.todosSectionbefore{
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.todosSection{
+    margin: 20px;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 7px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 7px;
+}
+
+table tr:first-child th:first-child {
+    border-top-left-radius: 7px;
+    text-align: left;
+}
+
+table tr:first-child th:last-child {
+    border-top-right-radius: 7px;
+    text-align: center;
+}
+
+table td:last-child {
+    border-top-right-radius: 7px;
+    text-align: center;
+}
+
+table td:first-child {
+    border-top-right-radius: 7px;
+    text-align: left;
+}
+
+table tr:first-child{
+    border: none;
+}
+
+tr {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #FBFDFF;
+    border-top: 1px solid #CCCCCC;
+}
+
+td {
+    padding: 7px 20px;
+    font-size: 15px;
+}
+
+th {
+    padding: 8px 20px;
+    background: #003250;
+    color: #fff;
+    font-size: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #003250;
+}
+
+.btnLeftMargin{
+    margin-left: 10px;
+}
+
+.addTodo-body {
+    padding: 30px 50px;
+}
+
+.form-control {
+    height: 38px;
+}
+
+.close {
+    text-align: right;
+    margin-right: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.addTodo-header {
+    color: #3b86ff;
+    font-size: 21px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.editTodo-header{
+    color: #c7b724;
+    font-size: 21px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-group > label {
+    margin-bottom: 2px;
+    color: #000;
+}
+
+.form-control {
+    box-shadow: 0px 2px 3px #0000000d;
+    border: 1px solid #d7dae2;
+}
