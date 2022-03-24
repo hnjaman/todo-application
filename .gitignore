@@ -1,0 +1,73 @@
+mvnw
+*.cmd
+
+HELP.md
+!todo-service/target
+todo-service/target/*
+!todo-service/target/todo-service-0.0.1-SNAPSHOT.jar
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### angular ###
+# compiled output
+/todo-service-ui/dist
+/todo-service-ui/tmp
+/todo-service-ui/out-tsc
+# Only exists if Bazel was run
+/todo-service-ui/bazel-out
+
+# dependencies
+/todo-service-ui/node_modules
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# IDEs and editors
+/.idea
+/.idea/*
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# System Files
+.DS_Store
+Thumbs.db
