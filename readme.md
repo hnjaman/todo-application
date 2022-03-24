@@ -33,7 +33,7 @@ docker-compose up -d
 need to build it yourself. You can also do it by configuring Java, Maven, MySQL in your system.
 
 
-#### What will happen after completing ``docker-compose up`` ?
+#### What will happen after completing ``docker-compose up -d`` ?
 
 1. Pull ```mysql:8``` docker image and run in a container with specified configuration.
 2. Pull ```openjdk:8``` docker image, prepare todo-service image and run it in a docker container in 8080 port.
@@ -53,11 +53,10 @@ Visit http://localhost:4200/home and you will see -
 
 ![todo home](readme-images/initial.png)
 
-You will find different action button to add todo, edit, mark as done and delete todo.
-
-Add a todo item
+Initially there is no todo in the list. Add a todo item -
 ![add todo](readme-images/add.png)
 
+Now you will find different action button to edit, mark as done and delete todos.
 ![add todo](readme-images/add-success.png)
 
 ### The End
